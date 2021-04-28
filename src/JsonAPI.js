@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import data from "./data.json";
+import data from "./data1.json";
 
 // const  itemIcon = data.Pets.icon;
 // const  itemName = data.Pets.name;
