@@ -14,7 +14,7 @@ class Json extends Component {
         <h2>Json datan </h2>
             {
                 data.Pets.map((pet, i) => {
-                    
+                    //console.log(pet)
                     return (
                         <div key={i}>
                             <div className='card'>

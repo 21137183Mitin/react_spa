@@ -1,40 +1,33 @@
 import React, { Component } from "react";
-import data from "./data1.json";
 
-// const  itemIcon = data.Pets.icon;
-// const  itemName = data.Pets.name;
-// const  itemDescription = data.Pets.description;
-// const  itemSkills = data.skills;
+var requestURL = "https://api.guildwars2.com/v2/pets/34";
+var xhReq = new XMLHttpRequest();
+xhReq.open("GET", requestURL, false);
+xhReq.send();
+var pet = JSON.parse(xhReq.responseText);
 
-
-class Json extends Component {
+class Card extends Component {
   render() {
     return (
-    <div>
-        <h2>Pet card</h2>
-            {
-                data.Pets.map((pet, i) => {
-                    
-                    return (
-                        <div key={i}>
-                            <div className='card'>
-                            <h1>{pet.name}</h1>    
-                            <img src={pet.icon} alt={pet.name} ></img>
-                            <p className="price">{pet.description}</p>
-                          
+      <div>
+        <div key="pet.id">
+          <div className="card">
+            <h1>{pet.name}</h1>
+            <img src={pet.icon} alt={pet.name}></img>
+            <p className="price">{pet.description}</p>
 
-                            <form action={[pet.url + pet.name]} method="get" target="_blank">
-                                <button type="submit">More info</button>
-                            </form>
-                            
-                            </div>
-                        </div>
-                    );
-                })
-            }
-    </div>
+            <form
+              action={"https://wiki.guildwars2.com/wiki/" + pet.name}
+              method="get"
+              target="_blank"
+            >
+              <button type="submit">More info</button>
+            </form>
+          </div>
+        </div>
+      </div>
     );
   }
 }
- 
-export default Json;
+
+export default Card;

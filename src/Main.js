@@ -9,6 +9,7 @@ import Tarina from "./Tarinat";
 import Yhteys from "./Yhteys";
 import Json from "./Json"
 import Card from "./JsonAPI.js"
+import Card1 from "./JsonFetch.js"
  
 class Main extends Component {
     render() {
@@ -23,6 +24,7 @@ class Main extends Component {
               <li><NavLink to="/yhteys">Yhteys</NavLink></li>
               <li><NavLink to="/json">Json</NavLink></li>
               <li><NavLink to="/card">Card</NavLink></li>
+              <li><NavLink to="/card1">Card1</NavLink></li>
             </ul>
             <div className="content">
               <Route exact path="/" component={Koti}/>
@@ -31,6 +33,7 @@ class Main extends Component {
               <Route path="/yhteys" component={Yhteys}/>
               <Route path="/json" component={Json}/>
               <Route path="/card" component={Card}/>
+              <Route path="/card1" component={Card1}/>
             </div>
           </div>
         </HashRouter>
