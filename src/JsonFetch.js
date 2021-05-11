@@ -6,7 +6,32 @@ import React, { Component, useEffect } from "react";
 // const  itemName = data.Pets.name;
 // const  itemDescription = data.Pets.description;
 // const  itemSkills = data.skills;
+//////////////////////////////////////////////////////////////////////////////////
+//https://www.codecademy.com/courses/react-101/lessons/the-effect-hook/exercises/rules-of-hooks
 
+// import DATA from "./data";
+
+// export function get(endpoint) {
+//   const delay = Math.floor(Math.random() * 1000) + 500;
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (!DATA.hasOwnProperty(endpoint)) {
+//         const validEndpoints = Object.keys(DATA)
+//           .map((endpoint) => ` - "${endpoint}"`)
+//           .join("\n ");
+//         reject(
+//           `"${endpoint}" is an invalid endpoint. Try getting data from: \n ${validEndpoints}`
+//         );
+//       }
+
+//       const response = { status: 200, data: DATA[endpoint] };
+
+//       resolve(response);
+//     }, delay);
+//   });
+// }
+
+////////////////////////////////////////////////////////////////////////////////////
 
 // const fetchPets = async () => {   // "async" for asynchronous work "await"
 //     const apiUrl = 'https://api.guildwars2.com/v2/pets/34';
@@ -50,32 +75,33 @@ import React, { Component, useEffect } from "react";
     // })
 
     // console.log(pet.id)
-
+    
     let data_name;
     let data_description;
     let data_icon;
-
+    
     async function fetchMoviesJSON() {
         const response = await fetch('https://api.guildwars2.com/v2/pets/34');
         const movies = await response.json();
         return movies;
-      }
-
-      const data = fetchMoviesJSON().then(movies => {
+        
+    }
+    
+    const data = fetchMoviesJSON().then(movies => {
         data_name = movies.name;
         data_description = movies.description;
         data_icon = movies.icon;        
     })
     
     
-   
     
     
-
+    
     
     
     class Card1 extends Component {
         
+       
         
         
         render() {
