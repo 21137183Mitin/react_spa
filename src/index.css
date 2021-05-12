@@ -95,6 +95,7 @@ a.button1 {
 
 a.button1:hover {
   color: #000;
+  background-color: #FFF;
 }
 
 .pyorat h2 {
@@ -111,6 +112,7 @@ a.button1:hover {
   text-align: center;
   font-family: arial;
   color: rgb(29, 27, 27);
+  border-radius: .6em;
 }
 
 
